@@ -1,0 +1,58 @@
+Hashing have time complexity o (1) because insert and delete takes without any additional delay
+
+key ------> Hash function  (1.hash code --->  covert key to corresponding integer ) ,(compressioncode ---- >
+
+will take modulo of ouput of hash code and make that value lies between bucket array) --- > Finally a index of list is get to store that key
+
+
+when the key is called again,it will repeat same process and give it values
+
+
+But even after taking modules some cases will make collision
+for example  :
+asuume 20 is the bucket size
+ 105%20  == 5 and 205 %20 == 5
+so this will make insert both 105 and 205 at same position
+
+
+There are 2 methods to solve this collision
+
+1)closed hashing /  seperate chain :
+    it will store those collided elements into linked list and save the head address into that collided location
+
+
+2)open addressing :
+    store these collidated elements into different different locations
+
+    There are some methods
+        1)linear probing :
+            try to find next free space near to collidaed location,it will go linearly checking each element at
+            a time and when it finds a index which is empty it will store the data there , when it check all elements to end
+            it will continue from start of bucket array fi =i
+            it uses index i
+
+
+        2)quadratic probing: fi will be i^2    ,and quadratic probling is faster than linear probling
+
+        3)Double hashing:
+            fi=fi* h(i)  where hi will be other hash fuction
+
+
+among these two mehods closed hashing will be more better time complexity
+
+
+
+REHASING: the of the bucket will be maintain 0.7 ration .. if the total size of bukcet  are b ,each node should only contain n/b < 0.7 linked list ,
+if there is any chane to increase n/b >0.7 ,doubling of size of bucket will happend and that process is called rehashing
+
+and rehashing takes time ,because it needs to copy and paste the array,but that is not happening all time
+
+
+o (1) for searching deleting and  insertion
+
+
+
+STEPS FOR REHASHING:
+    
+
+

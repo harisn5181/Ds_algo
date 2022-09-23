@@ -1,0 +1,21 @@
+1)list stores the refernces of the values,intead of the values
+thats why we can store multiple types of data in list 
+
+2)list uses continuous reference point.
+for example then it is 4 byte . then refernes of the addres sh0ould be something like this 100 104 108 112
+
+3)list follows a concept of resizing,
+when we are going to append a element at 4rth position ,and that element is alread fill,list will double the size of the list where it can find continous 4 byte element (if it is 4 ,we will use 4 ,)
+
+list can have start end and step
+li=[1::]
+
+For converting string of list into integer
+for ele in string_of_list:
+  append.li(int(ele))
+other way is 
+  li=[int (x) for x in input ().split()]
+
+
+variables are immutable 
+  list are mutable because they are only storing the reference of the elelment
