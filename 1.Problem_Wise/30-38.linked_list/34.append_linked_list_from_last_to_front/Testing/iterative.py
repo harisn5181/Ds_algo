@@ -19,8 +19,6 @@ def len_link(head):
 
 
 def appendLastNToFirst(head, n):
-
-
     count = 1
     temp_head = head
     nodes, old_tail = len_link(head)

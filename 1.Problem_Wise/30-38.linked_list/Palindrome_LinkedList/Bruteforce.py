@@ -1,4 +1,6 @@
-from sys import stdin
+from sys import stdin, setrecursionlimit
+
+setrecursionlimit(10 ** 5)
 
 
 # Following is the Node class already written for the Linked List
@@ -8,42 +10,24 @@ class Node:
         self.next = None
 
 
-def len_link(head):
-    count = 0
-    tail = None
+def isPalindrome(head):
+    curr = head
+    stack = []
+    ispalin = True
+    while curr is not None:
+        stack.append(curr.data)
+        curr = curr.next
+
     while head is not None:
-        count = count + 1
-        tail = head
+
+        i = stack.pop()
+        if head.data == i:
+            ispalin = True
+        else:
+            ispalin = False
+            return ispalin
         head = head.next
-    return count, tail
-
-
-def appendLastNToFirst(head, n):
-
-
-    count = 1
-    temp_head = head
-    nodes, old_tail = len_link(head)
-
-    if n >= nodes or n <= 1 or nodes < 1:
-        return head
-
-    x = nodes - n
-
-    while temp_head is not None:
-        if count == x:
-            new_tail = temp_head
-            break
-        temp_head = temp_head.next
-        count = count + 1
-
-    old_tail.next = head
-
-    head = new_tail.next
-
-    new_tail.next = None
-
-    return head
+    return ispalin
 
 
 # Taking Input Using Fast I/O
@@ -84,10 +68,12 @@ def printLinkedList(head):
 t = int(stdin.readline().rstrip())
 
 while t > 0:
-    head = takeInput()
-    n = int(stdin.readline().rstrip())
 
-    head = appendLastNToFirst(head, n)
-    printLinkedList(head)
+    head = takeInput()
+
+    if isPalindrome(head):
+        print('true')
+    else:
+        print('false')
 
     t -= 1
