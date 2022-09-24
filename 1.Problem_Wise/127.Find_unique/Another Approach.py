@@ -10,6 +10,6 @@ def findUnique(arr, n) :
         if j == n :
             return arr[i]
 
-arr=[10,5,7,10,5,]
+arr=[10,5,7,10,5,] #After sort 5,5,7,10,10
 n=5
 print(findUnique(arr,n))

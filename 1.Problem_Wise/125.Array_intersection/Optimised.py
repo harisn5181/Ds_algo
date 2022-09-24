@@ -1,10 +1,6 @@
 
 # Bruteforce Approach TC: 0(n^2)  SC: 0(1)
-
 from sys import stdin
-
-
-
 #optimized Apporach   TC: 0 (n) SC: 0(1)
 
 def intersection(arr1, arr2, n, m) :
