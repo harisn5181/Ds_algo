@@ -1,12 +1,8 @@
-#my code
 
-
-
-
+from sys import stdin
 import sys
-import queue
 
-
+sys.setrecursionlimit(10 ** 6)
 
 
 class treeNode:
@@ -18,25 +14,28 @@ class treeNode:
         return str(self.data)
 
 
-def printLevelWiseTree(tree):
-    q = queue.Queue()
-
-    if tree == None:
+def maxDataNode(tree):
+    global l
+    if tree is None:
         return
+    if l is None:
+        l = tree
+    elif tree.data > l.data:
+        l = tree
+    for i in tree.children:
+        maxDataNode(i)
+    return l
 
-    q.put(tree)
-    while (not(q.empty())):
-        node=q.get()
 
+def numnodes(root):
+    if root == None:
+        return 0
+    minimum = root.data
 
+    for child in root.children:
+        minimum = max(numnodes(child), minimum)
 
-        print(node, end=":")
-
-        for i in node.children:
-            print(i, end=",")
-            q.put(i)
-        print()
-
+    return minimum
 
 def createLevelWiseTree(arr):
     root = treeNode(int(arr[0]))
@@ -56,8 +55,8 @@ def createLevelWiseTree(arr):
 
 
 # Main
-sys.setrecursionlimit(10 ** 6)
-arr = [10, 3, 20, 30, 40, 2, 40, 50, 0, 0, 0, 0 ]
+arr = list(int(x) for x in stdin.readline().rstrip().rsplit())
+l = None
 tree = createLevelWiseTree(arr)
-printLevelWiseTree(tree)
-
+#print(maxDataNode(tree))
+print(numnodes(tree))

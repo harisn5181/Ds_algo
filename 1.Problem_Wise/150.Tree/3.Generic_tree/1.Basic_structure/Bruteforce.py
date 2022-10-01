@@ -1,4 +1,4 @@
-class Generic_tree(data):
+class Generic_tree:
     def __int__(self,data):
         self.data=data
         children=list()

@@ -1,41 +1,47 @@
-#preorder  root left right
-#postorder  left right root
-#inorder    left root right
-
-
-from sys import stdin, setrecursionlimit
 import queue
 
-setrecursionlimit(10 ** 6)
 
-
-# Following the structure used for Binary Tree
 class BinaryTreeNode:
     def __init__(self, data):
         self.data = data
         self.left = None
         self.right = None
 
-
-def preOrder(root):
-    # Your code goes here
-
-    if root == None:
-        return
-    print(root.data)
-
-    preOrder(root.left)
-    preOrder(root.right)
+    # Solution
 
 
+def searchInBST(root, k):
 
 
-# Taking level-order input using fast I/O method
+    if root is None:
+
+        return False
+    if root.data == k:
+
+
+        return True
+
+
+    if k >= root.data:
+        return searchInBST(root.right,k)
+    else:
+        return searchInBST(root.left,k)
+
+
+
+
+
+
+
+
 def takeInput():
-    levelOrder = list(map(int, stdin.readline().strip().split(" ")))
+    levelOrder = [8 ,5, 10, 2, 6, -1, -1, -1, -1, -1, 7 ,-1, -1]
     start = 0
 
     length = len(levelOrder)
+
+    if length == 1 :
+        return None
 
     root = BinaryTreeNode(levelOrder[start])
     start += 1
@@ -51,7 +57,7 @@ def takeInput():
 
         if leftChild != -1:
             leftNode = BinaryTreeNode(leftChild)
-            currentNode.left = leftNode
+            currentNode.left =leftNode
             q.put(leftNode)
 
         rightChild = levelOrder[start]
@@ -59,12 +65,19 @@ def takeInput():
 
         if rightChild != -1:
             rightNode = BinaryTreeNode(rightChild)
-            currentNode.right = rightNode
+            currentNode.right =rightNode
             q.put(rightNode)
 
     return root
 
 
 # Main
-root = takeInput()
-preOrder(root)
+
+root =takeInput()
+k = 7
+
+ans = searchInBST(root, k)
+if ans:
+    print("true")
+else:
+    print("false")

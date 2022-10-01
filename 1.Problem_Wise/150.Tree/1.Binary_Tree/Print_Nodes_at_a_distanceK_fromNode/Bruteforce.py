@@ -1,10 +1,5 @@
-#Get_Minimum_and_maximum_datasintree and return using a class
-
-
-#from sys import stdin, setrecursionlimit
+from sys import stdin, setrecursionlimit
 import queue
-import math
-from sys import setrecursionlimit
 
 setrecursionlimit(10 ** 6)
 
@@ -17,40 +12,68 @@ class BinaryTreeNode:
         self.right = None
 
 
+def changeToDepthTree(root,k) :
+	#Your code goes here
+    if root == None or k<0:
+        return
+    if k==0:
+        print(root.data)
+        return
+    changeToDepthTree(root.left, k-1)
+    changeToDepthTree(root.right, k-1)        
 
-#Representation of the Pair Class
-class Pair :
-
-    def __init__(self, minimum, maximum) :
-        self.minimum = minimum
-        self.maximum = maximum
-
-def getMinAndMax(root) :
-    #Your code goes here
+def nodesAtDistanceK(root, node, k) :
+	#Your code goes here
     if root is None:
-        h= Pair(math.inf, -math.inf)
-        return h
-    lPair = getMinAndMax(root.left)
-    rPair = getMinAndMax(root.right)
+        return None
+    if root.data==node:
+        changeToDepthTree(root,k)
+        return 0
+    d1 = nodesAtDistanceK(root.left, node, k)
+    if d1 != None:
+        if d1 + 1==k:
+            print(root.data)
+        else:
+           changeToDepthTree(root.right,k-d1-2)
+        return 1 + d1
+    
+    d2 = nodesAtDistanceK(root.right, node, k)
+    if d2 != None:
+        if(d2+1==k):
+            print(root.data)
+        else:
+            changeToDepthTree(root.left,k-d2-2)
+        return 1 + d2
 
-    mini = min(root.data,lPair.minimum, rPair.minimum)
-    maxi = max(root.data, lPair.maximum, rPair.maximum)
-    return Pair(mini, maxi)
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
 
 
 #Taking level-order input using fast I/O method
 def takeInput():
-    levelOrder = [8 ,3 ,10, 1 ,6, -1, 14, -1, -1, 4 ,7 ,13 ,-1 ,-1, -1, -1, -1 ,-1 ,-1]
+    levelOrder = list(map(int, stdin.readline().strip().split(" ")))
     start = 0
-
+    
     length = len(levelOrder)
 
     if length == 1 :
         return None
-
+    
     root = BinaryTreeNode(levelOrder[start])
     start += 1
 
@@ -78,7 +101,7 @@ def takeInput():
 
     return root
 
-
+    
 def printLevelWise(root):
     if root is None:
         return
@@ -88,22 +111,25 @@ def printLevelWise(root):
     inputQ.put(root)
 
     while not inputQ.empty():
-
+       
         while not inputQ.empty():
-
+       
             curr = inputQ.get()
             print(curr.data, end=' ')
             if curr.left!=None:
                 outputQ.put(curr.left)
             if curr.right!=None:
                 outputQ.put(curr.right)
-
+       
         print()
         inputQ, outputQ = outputQ, inputQ
 
 
 # Main
 root = takeInput()
+target_k = stdin.readline().strip().split(" ")
 
-pair = getMinAndMax(root)
-print(str(str(pair.minimum) + " " + str(pair.maximum)))
+target = int(target_k[0])
+k = int(target_k[1])
+
+nodesAtDistanceK(root, target, k)

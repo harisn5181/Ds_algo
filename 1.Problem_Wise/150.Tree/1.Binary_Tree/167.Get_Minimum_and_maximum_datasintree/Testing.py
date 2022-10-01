@@ -1,11 +1,6 @@
-#Get_Minimum_and_maximum_datasintree and return using a class
-
-
-#from sys import stdin, setrecursionlimit
+from sys import stdin, setrecursionlimit
 import queue
 import math
-from sys import setrecursionlimit
-
 setrecursionlimit(10 ** 6)
 
 
@@ -27,30 +22,26 @@ class Pair :
 
 def getMinAndMax(root) :
     #Your code goes here
-    if root is None:
-        h= Pair(math.inf, -math.inf)
-        return h
-    lPair = getMinAndMax(root.left)
-    rPair = getMinAndMax(root.right)
-
-    mini = min(root.data,lPair.minimum, rPair.minimum)
-    maxi = max(root.data, lPair.maximum, rPair.maximum)
-    return Pair(mini, maxi)
-
-
-
-
+    if root==None:
+        return 0
+    left=getMinAndMax(root.left)
+    right=getMinAndMax(root.right)
+    #minimum= min(left,right,root.data) 
+    maximum=max(left,right,root.data)
+    
+    return maximum 
+    
 
 #Taking level-order input using fast I/O method
 def takeInput():
     levelOrder = [8 ,3 ,10, 1 ,6, -1, 14, -1, -1, 4 ,7 ,13 ,-1 ,-1, -1, -1, -1 ,-1 ,-1]
     start = 0
-
+    
     length = len(levelOrder)
 
     if length == 1 :
         return None
-
+    
     root = BinaryTreeNode(levelOrder[start])
     start += 1
 
@@ -78,7 +69,7 @@ def takeInput():
 
     return root
 
-
+    
 def printLevelWise(root):
     if root is None:
         return
@@ -88,16 +79,16 @@ def printLevelWise(root):
     inputQ.put(root)
 
     while not inputQ.empty():
-
+       
         while not inputQ.empty():
-
+       
             curr = inputQ.get()
             print(curr.data, end=' ')
             if curr.left!=None:
                 outputQ.put(curr.left)
             if curr.right!=None:
                 outputQ.put(curr.right)
-
+       
         print()
         inputQ, outputQ = outputQ, inputQ
 
@@ -105,5 +96,6 @@ def printLevelWise(root):
 # Main
 root = takeInput()
 
-pair = getMinAndMax(root)
-print(str(str(pair.minimum) + " " + str(pair.maximum)))
+max= getMinAndMax(root)
+print(max)
+#print(str(str(pair.minimum) + " " + str(pair.maximum)))

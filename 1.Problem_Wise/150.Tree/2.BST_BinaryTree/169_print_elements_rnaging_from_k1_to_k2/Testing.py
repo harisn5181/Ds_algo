@@ -1,5 +1,6 @@
 import queue
-    
+
+
 class BinaryTreeNode:
     def __init__(self, data):
         self.data = data
@@ -9,86 +10,52 @@ class BinaryTreeNode:
 
 
 
-def isNodePresent(root, x):
+def elementsInRangeK1K2(root, k1, k2):
     
-    if root == None :
-        return False
+    if root == None:
+        return
 
-    # If the current node value is equal to x, return true.
-    elif root.data == x :
-        return True
+    if k1 <= root.data and k2 >= root.data:
 
-    # Check whether x is present in the left tree or right tree of the current node.
-    else :
-        return isNodePresent(root.left, x) or isNodePresent(root.right, x)
-    # Write your code here.
-    
+        elementsInRangeK1K2(root.left,k1,k2)
+        print(root.data, end=" ")
+        elementsInRangeK1K2(root.right,k1,k2)
 
+    elif k2<root.data:
+        elementsInRangeK1K2(root.left,k1,k2)
 
-
-
+    elif k1>= root.data:
+        elementsInRangeK1K2(root.right,k1,k2)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# To build the tree
 def buildLevelTree(levelorder):
     index = 0
     length = len(levelorder)
-
-    if length<=0 or levelorder[0]==-1:
+    if length <= 0 or levelorder[0] == -1:
         return None
-
     root = BinaryTreeNode(levelorder[index])
     index += 1
     q = queue.Queue()
     q.put(root)
-
     while not q.empty():
-
         currentNode = q.get()
         leftChild = levelorder[index]
         index += 1
-
         if leftChild != -1:
-
             leftNode = BinaryTreeNode(leftChild)
-            currentNode.left =leftNode
+            currentNode.left = leftNode
             q.put(leftNode)
-
         rightChild = levelorder[index]
         index += 1
-
         if rightChild != -1:
-
             rightNode = BinaryTreeNode(rightChild)
-            currentNode.right =rightNode
+            currentNode.right = rightNode
             q.put(rightNode)
-
     return root
 
 
 # Main
-levelOrder = [int(i) for i in input().strip().split()]
+levelOrder = [8,3,10,1,7,9,13,-1,-1,-1,-1,-1,-1,-1,-1]
 root = buildLevelTree(levelOrder)
-
-x = int(input())
-
-present = isNodePresent(root, x)
-
-if present:
-    print('true')
-else:
-    print('false')
+k1, k2 = 1,17
+elementsInRangeK1K2(root, k1, k2)

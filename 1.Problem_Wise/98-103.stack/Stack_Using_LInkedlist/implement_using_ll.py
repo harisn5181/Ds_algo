@@ -10,6 +10,8 @@ class Stack:
 
   def push(self,element):
     newNode=Node(element)
+    #print(newNode.next)
+
     newNode.next=self.__head
     self.__head= newNode
     self.__count=self.__count+1
@@ -51,6 +53,7 @@ s.push(15)
 
 while s.isEmpty() is False:
   print(s.pop())
+
 
 
 

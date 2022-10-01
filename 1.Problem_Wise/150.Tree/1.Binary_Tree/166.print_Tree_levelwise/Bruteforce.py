@@ -4,7 +4,7 @@ import queue
 setrecursionlimit(10 ** 6)
 
 
-# Following is the structure used to represent the Binary Tree Node
+#Following is the structure used to represent the Binary Tree Node
 class BinaryTreeNode:
     def __init__(self, data):
         self.data = data
@@ -13,54 +13,71 @@ class BinaryTreeNode:
 
 
 def printLevelWise(root):
+    if root is None :
+        return
+
+    pendingNodes = queue.Queue()
+    pendingNodes.put(root)
+
+    while not pendingNodes.empty(): 
+       
+        frontNode = pendingNodes.get()
+    
+        print((str(frontNode.data) + ":L:"), end = "")
+
+        if frontNode.left is not None :
+            pendingNodes.put(frontNode.left)
+            print((str(frontNode.left.data) + ",R:"), end = "")
+
+        else :
+            print(("-1,R:"), end = "")
 
 
-    q = queue.Queue()
-    q.put(root)
+        if frontNode.right is not None :
+            pendingNodes.put(frontNode.right)
+            print((frontNode.right.data))
 
-
-    while (not (q.empty())):
-        current_node = q.get()
-
-
-        print(current_node,end="")
-        if current_node != -1:
-
-            left_child=current_node.left
-            right_child=current_node.right
-            if left_child==None :
-                q.put(-1)
-
-            else:
-
-                q.put(left_child)
-            if right_child ==None:
-                q.put(-1)
-            else:
-
-                q.put(right_child)
-
-
-
+        else :
+            print(-1)
 
 
 
 
 
 
-# Your code goes here
 
 
-# Taking level-order input using fast I/O method
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+#Taking level-order input using fast I/O method
 def takeInput():
-    levelOrder = [1, 2, 3, 1, 5, -1,  8, -1, -1, -1, -1, -1, -1]
+    levelOrder = list(map(int, stdin.readline().strip().split(" ")))
     start = 0
-
+    
     length = len(levelOrder)
 
-    if length == 1:
+    if length == 1 :
         return None
-
+    
     root = BinaryTreeNode(levelOrder[start])
     start += 1
 
@@ -75,7 +92,7 @@ def takeInput():
 
         if leftChild != -1:
             leftNode = BinaryTreeNode(leftChild)
-            currentNode.left = leftNode
+            currentNode.left =leftNode
             q.put(leftNode)
 
         rightChild = levelOrder[start]
@@ -83,7 +100,7 @@ def takeInput():
 
         if rightChild != -1:
             rightNode = BinaryTreeNode(rightChild)
-            currentNode.right = rightNode
+            currentNode.right =rightNode
             q.put(rightNode)
 
     return root

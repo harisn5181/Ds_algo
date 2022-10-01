@@ -1,12 +1,4 @@
-#my code
-
-
-
-
 import sys
-import queue
-
-
 
 
 class treeNode:
@@ -17,25 +9,18 @@ class treeNode:
     def __str__(self):
         return str(self.data)
 
-
-def printLevelWiseTree(tree):
-    q = queue.Queue()
-
+def leafNodeCount(tree):
     if tree == None:
         return
 
-    q.put(tree)
-    while (not(q.empty())):
-        node=q.get()
+    if len(tree.children) == 0:
+        return 1
 
+    count = 0
+    for child in tree.children:
+        count += leafNodeCount(child)
 
-
-        print(node, end=":")
-
-        for i in node.children:
-            print(i, end=",")
-            q.put(i)
-        print()
+    return count
 
 
 def createLevelWiseTree(arr):
@@ -57,7 +42,7 @@ def createLevelWiseTree(arr):
 
 # Main
 sys.setrecursionlimit(10 ** 6)
-arr = [10, 3, 20, 30, 40, 2, 40, 50, 0, 0, 0, 0 ]
+arr=[10, 3, 20 ,30, 40, 2, 40, 50, 0, 0 ,0,0 ]
 tree = createLevelWiseTree(arr)
-printLevelWiseTree(tree)
+print(leafNodeCount(tree))
 

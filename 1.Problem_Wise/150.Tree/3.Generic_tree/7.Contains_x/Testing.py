@@ -1,27 +1,22 @@
-
 from sys import stdin,setrecursionlimit
 setrecursionlimit(10**6)
 class treeNode:
     def __init__(self, data):
         self.data = data
         self.children = []
+    def __str__(self):
+        return str(self.data)
 
+def containsX(root, x):
+    if root == None:
+        return
 
-
-def isIdentical(tree1, tree2):
-    if not tree1:
-        if not tree2:
+    if root.data==x:
+        return True
+    for child in root.children:
+        if containsX(child,x):
             return True
-        return False
-    if (tree1.data != tree2.data) or len(tree1.children) != len(tree2.children):
-        return False
-    for child1, child2 in zip(tree1.children, tree2.children):
-        if not isIdentical(child1, child2):
-            return False
-    return True
-
-
-
+    return False
 
 
 def createLevelWiseTree(arr):
@@ -41,11 +36,11 @@ def createLevelWiseTree(arr):
     return root
 
 # Main
-arr1 = list(int(x) for x in stdin.readline().strip().split())
-tree1 = createLevelWiseTree(arr1)
-arr2 = list(int(x) for x in stdin.readline().strip().split())
-tree2 = createLevelWiseTree(arr2)
-if isIdentical(tree1, tree2):
+
+arr = [10 ,3 ,20, 30, 40, 2, 40, 50, 0, 0 ,0, 0]
+
+tree = createLevelWiseTree(arr)
+if containsX(tree,x):
     print('true')
 else:
     print('false')
