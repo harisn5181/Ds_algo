@@ -15,20 +15,10 @@ def rasi(string,string2,string3):
 string="abc"
 string2=[]
 string3=[]
-print(rasi(string,string2,string3))
+#print(rasi(string,string2,string3))
 
 
 
 
 
-
-# string2=['c',"","bc","b"]
-# string="abc"
-# string3=[]
-# for i in string2:
-#     string3.append(i)
-# for i in string2:
-#          temp=string[0]+i
-#          #print(temp)
-#          string3.append(temp)
-# print(string3)
+ing3)

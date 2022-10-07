@@ -25,7 +25,7 @@ def minstepst01(n):
     return
 #MAIN
 
-n=10
+n=4
 count=0
 minstepst01(n)
 

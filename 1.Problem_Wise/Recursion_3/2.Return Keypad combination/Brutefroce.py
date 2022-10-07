@@ -34,17 +34,18 @@ def keypad(n):
         output=[]
         output.append("")
         return output
-    smallernumber=n//10
-    lastdigit=n%10
+    smallernumber=n//10 # 23
+    lastdigit=n%10 #
 
-    smalleroutput=keypad(smallernumber)
-    optionforlastdigit=getstring(lastdigit)
+    smalleroutput=keypad(smallernumber) #j, k, l,""
+
+    optionforlastdigit=getstring(lastdigit) #def
 
     output=[]
 
     for s in  smalleroutput :
         for c in optionforlastdigit:
             option=s+c
-            output.append(option)
+            output.append(option) #j, k, l,
     return output
-print(keypad(2))
+print(keypad(235))

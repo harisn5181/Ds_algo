@@ -27,7 +27,7 @@ def printkeypad(n,outputsofar):
     optionsforlastdigit=getstring(lastdigit)
 
     for c in optionsforlastdigit:
-        newoutput=outputsofar+c
+        newoutput=c+outputsofar
         printkeypad(smallnumber,newoutput)
 
 
