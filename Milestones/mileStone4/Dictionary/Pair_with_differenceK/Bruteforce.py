@@ -1,4 +1,3 @@
-
 def printPairDiffK(l, k):
     d={}
     c=0
@@ -14,10 +13,7 @@ def printPairDiffK(l, k):
             c += (d[i + k] * (d[i + k] - 1) // 2)
     return c
 
+l=[4,4,4,4,1,1]
 
-
-n=4
-
-l=0,0,0,0
 k=0
 print(printPairDiffK(l, k))

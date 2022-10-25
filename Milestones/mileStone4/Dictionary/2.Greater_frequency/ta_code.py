@@ -15,14 +15,8 @@ def maxfreq(arr):
     return ans
 
 
-def takeInput():
-    # To take fast I/O
-    n = int(stdin.readline().strip())
-    if n == 0:
-        return list(), 0
-    arr = list(map(int, stdin.readline().strip().split()))
-    return arr, n
 
 
-arr, n = takeInput()
+
+arr = [2 ,12, 2, 11, 12, 2 ,1 ,2 ,2 ,11, 12, 2 6 ]
 print(maxfreq(arr))

@@ -11,6 +11,7 @@ def subsetSum(a):
 
         elif sum not in d:
             d[sum] = i
+          
         else:
             l = i - d[sum] # 7-2=5
             flag = True
@@ -22,5 +23,5 @@ def subsetSum(a):
 
 # Main
 n = 9
-l = [  6 ,3, -1 ,2, -4, 3, 1, -2, 20]
+l = [ 95, -97, -387, -435 ,-5, -70, 897, 127, 23 ,284]
 print(subsetSum(l))

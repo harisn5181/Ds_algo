@@ -7,7 +7,7 @@ def longest(l):
 
     for curr in dic:
      if dic[curr] != False:
-        curr1 = curr # 7
+        curr1 = curr # 
         temp = [curr] #[7,]
         dic[curr] = False #3:False
         while dic.get(curr + 1, False):
@@ -35,7 +35,7 @@ def longest(l):
 # You have To Return the list of longestConsecutiveSubsequence
 
 
-n = 5
+
 l = [3 ,7 ,2 ,1 ,9 ,8 ,41 ]
 final = longest(l)
 final.sort()
