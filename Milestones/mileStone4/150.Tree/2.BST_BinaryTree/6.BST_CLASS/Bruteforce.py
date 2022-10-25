@@ -1,6 +1,12 @@
 class BinaryTreeNode:
     def __init__(self, data):
         self.data = data
+        
+
+
+
+
+
         self.left = None
         self.right = None
 
@@ -59,13 +65,16 @@ class BST:
             return False, root
         if data < root.data:
             bl, root.left = self.deleteHeavyIncrement(root.left, data)
+            return bl,root
         elif data > root.data:
             br, root.right = self.deleteHeavyIncrement(root.right, data)
+            return br,root
         else:
             if root.left == None and root.right == None:
                 return True, None
             elif root.left == None:
                 return True, root.right
+                
             elif root.right == None:
                 return True, root.left
             else:
@@ -77,11 +86,19 @@ class BST:
                 return True, root
         return (bl or br), root
 
+    def min(self,root):
+        if root ==None:
+            return 1000
+        if root.left==None:
+            return root.data
+        return self.min(root.left)
+
+
     def delete(self, data):
         b, self.root = self.deleteHeavyIncrement(self.root, data)
         if b:
             self.numNodes -= 1
-        return
+        return b
 
     def count(self):
         return self.numNodes
