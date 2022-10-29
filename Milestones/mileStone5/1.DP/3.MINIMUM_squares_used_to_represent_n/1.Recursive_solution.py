@@ -18,7 +18,7 @@ def minsquare(n):
     return ans
 
 
-n=41
+n=10
 ans=minsquare(n)
 print(ans)
 

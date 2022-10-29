@@ -20,7 +20,6 @@ def checkMember(n):
       fib=fib0+fib1
       fib0=fib1
       fib1=fib
-      
       if fib<= n: 
         if fib==n:
           print("yes")

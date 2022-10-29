@@ -34,7 +34,7 @@ def minstepst01(n, dp):
     return ans
 
 
-n = 10000
+n = 100
 
 dp = [-1 for i in range(n )]
 print(minstepst01(n, dp))

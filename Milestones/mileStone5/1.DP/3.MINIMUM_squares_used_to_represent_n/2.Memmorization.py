@@ -22,10 +22,11 @@ def minsquare(n,dp):
         ans=min(ans,currans)
     return  ans
 
-n=41
+n=3
 dp=[-1 for i in range (n)]
+
 ans=minsquare(n,dp)
-print(ans)
+print(ans) 
 
 
 

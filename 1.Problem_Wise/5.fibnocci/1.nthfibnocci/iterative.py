@@ -8,9 +8,9 @@ if n==1 or n ==2 :
 
 else:
     for i in range(n-2):
-        fib=fib0+fib1
-        fib0=fib1
-        fib1=fib
+        fib=fib0+fib1 # 3 
+        fib0=fib1 # 2
+        fib1=fib # 3
         Flag=True  
 if Flag==True:
     print(fib) 

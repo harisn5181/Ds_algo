@@ -3,13 +3,13 @@ def fibb(n,dp):
         return n
 
     if dp[n-1] == -1:
-        ans1=fibb(n-1,dp)
+        ans1=fibb(n-1,dp) # 1
         dp[n-1]=ans1
     else:
         ans1=dp[n-1]
 
     if dp[n-2] == -1:
-        ans2=fibb(n-2,dp)
+        ans2=fibb(n-2,dp) #0
         dp[n-2] = ans2
 
     else:
@@ -19,6 +19,6 @@ def fibb(n,dp):
     return myans
 
 n=int(input())
-dp=[-1 for i in range(n+1)] #have doubt  ,why do we need to go from -1
+dp=[-1 for i in range(n)] #
 ans=fibb(n,dp)
 print(ans)

@@ -10,10 +10,12 @@ def minsquares(n):
         root=int(math.sqrt(i))
 
         for j in range(1,root+1):
+            
             currentans=1+dp[i-(j**2)]
+            
             ans=min(ans,currentans)
         dp[i]=ans
     return dp[n]
-n=int(input())
+n=41
 ans=minsquares(n)
 print(ans)

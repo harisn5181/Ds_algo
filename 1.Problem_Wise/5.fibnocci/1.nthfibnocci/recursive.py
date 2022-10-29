@@ -11,9 +11,9 @@ def fib_in_interval(fib0,fib1,n):
   
     
 
-  fib=fib0+fib1
-  fib0=fib1
-  fib1=fib
+  fib=fib0+fib1 # 3
+  fib0=fib1 # 2
+  fib1=fib #3
  
 
   fib_in_interval(fib0,fib1,n-1)
@@ -22,8 +22,6 @@ def fib_in_interval(fib0,fib1,n):
 
 #main
 n=int(input())
-
-
 if n<=0:
   print("we are expecting numbers from 1 to onwards")
 
