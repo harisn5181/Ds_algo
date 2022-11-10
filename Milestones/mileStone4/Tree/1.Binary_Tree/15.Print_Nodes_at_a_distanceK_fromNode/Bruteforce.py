@@ -48,22 +48,6 @@ def nodesAtDistanceK(root, node, k) :
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-	
-
-
 #Taking level-order input using fast I/O method
 def takeInput():
     levelOrder = [1, 2, 3, 4, 5, 6 ,7 ,-1 ,-1, -1, -1, -1, -1, -1, -1]

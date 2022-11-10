@@ -38,8 +38,7 @@ def nodetoRootPath (root,s):
         if rightoutput != None:
             rightoutput.append(root.data)
             return rightoutput
-        else:
-            return None
+       
 
 
 # Taking level-order input using fast I/O method
@@ -85,6 +84,6 @@ def takeInput():
 root =takeInput()
 k = 3
 
-root=nodetoRootPath(root,k)
+root=nodetoRootPath(root,0)
 
 print(root)

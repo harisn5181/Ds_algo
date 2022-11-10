@@ -1,4 +1,8 @@
 import heapq
+
+
+
+
 def kthLargest(lst, k):
     heap=lst[:k]
     heapq.heapify(heap)
@@ -11,6 +15,6 @@ def kthLargest(lst, k):
 # Main Code
 
 lst=[2, 6, 10, 11 ,13, 4 ,1 ,20]
-k=4
+k=3
 ans=kthLargest(lst, k)
 print(ans)

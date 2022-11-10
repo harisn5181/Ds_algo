@@ -1,5 +1,12 @@
 import heapq
 
+
+
+
+
+
+
+
 def kSmallest(lst, k):
     heap = lst[:k]
     heapq._heapify_max(heap)

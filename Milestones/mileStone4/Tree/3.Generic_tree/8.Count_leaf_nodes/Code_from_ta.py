@@ -13,14 +13,14 @@ class treeNode:
         if tree == None:
             return
 
-    if len(tree.children) == 0:
-        return 1
+        if len(tree.children) == 0:
+            return 1
 
-    count = 0
-    for child in tree.children:
-        count += leafNodeCount(child)
+        count = 0
+        for child in tree.children:
+            count += leafNodeCount(child)
 
-    return count
+        return count
 
 
 def createLevelWiseTree(arr):

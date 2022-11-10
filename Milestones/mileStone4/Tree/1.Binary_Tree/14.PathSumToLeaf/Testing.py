@@ -21,7 +21,7 @@ def rootToLeafPathsSumToKHelper(root, k, path, currSum) :
         currSum += root.data
 
         if currSum == k :
-            print(str(path + str(root.data) + " ").lstrip())
+            print(str(path + str(root.data)))
 
         return
 
@@ -37,7 +37,7 @@ def rootToLeafPathsSumToK(root, k):
 
 #Taking level-order input using fast I/O method
 def takeInput():
-    levelOrder = list(map(int, stdin.readline().strip().split(" ")))
+    levelOrder = [2 ,3 ,9 ,4 ,8 ,-1, 2, 4, -1, -1 ,-1, 6 ,-1 ,-1, -1, -1, -1]
     start = 0
     
     length = len(levelOrder)
@@ -98,5 +98,5 @@ def printLevelWise(root):
 
 # Main
 root = takeInput()
-k = int(stdin.readline().strip())
+k = 13
 rootToLeafPathsSumToK(root, k)

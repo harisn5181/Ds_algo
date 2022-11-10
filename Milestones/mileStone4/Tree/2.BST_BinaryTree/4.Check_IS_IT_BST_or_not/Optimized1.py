@@ -1,7 +1,11 @@
+
+
+
 def isBst2(root):
     if root ==None:
         return 10000,-10000,True    
-    leftMin,leftMax,isLeftBst=isBst2(root.left)
+    
+    leftMin,leftMax,isLeftBst=isBst2(root.left) #2
     rightMin,rightMax,isRightBst=isBst2(root.right)
     
     minimum = min(leftMin,rightMin,root.data)

@@ -16,14 +16,14 @@ def mincost(cost,i,j,n,m,dp):
 
     if dp[i+1][j] == sys.maxsize:
         ans2=mincost(cost,i+1,j,n,m,dp)
-        #dp[i + 1][j]=ans2
+        dp[i + 1][j]=ans2
     else:
         ans2=dp[i+1][j]
 
     if dp[i+1][j+1 ] == sys.maxsize:
 
          ans3=mincost(cost,i+1,j+1,n,m,dp)
-         #dp[i + 1][j + 1]=ans3
+         dp[i + 1][j + 1]=ans3
     else:
         ans3=dp[i+1][j+1]
 
@@ -31,11 +31,13 @@ def mincost(cost,i,j,n,m,dp):
     return ans
 
 
-Cost=[[1,5,11],[8,13,12],[2,3,7],[15,16,18]]
+
 n=4
 m=3
 dp=[[sys.maxsize for j in range(m+1)] for i in range(n+1)]
-ans=mincost(Cost,0,0,4,3,dp)
+
+Cost=[[1,2,3],[4,5,6],[7,8,9]]
+ans=mincost(Cost,0,0,3,3,dp)
 print(ans)
 
 

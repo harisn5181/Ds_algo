@@ -53,23 +53,23 @@ class PriorityQueue:
 
     def __percolateDown(self):
         parentIndex = 0
-        leftIndex = 2 * parentIndex + 1
-        rightIndex = 2 * parentIndex + 2
-        while leftIndex < self.getSize():
+        leftIndex = 2 * parentIndex + 1  #1
+        rightIndex = 2 * parentIndex + 2 #2
+        while leftIndex < self.getSize(): #1<2
             
-            minIndex = parentIndex
+            minIndex = parentIndex  #0
             
             if (self.pq[minIndex].priority > self.pq[leftIndex].priority):
-                minIndex = leftIndex
+                minIndex = leftIndex #1
                 
             if (rightIndex < self.getSize() and self.pq[minIndex].priority > self.pq[rightIndex].priority):
                 minIndex = rightIndex
 
             if minIndex != parentIndex:
                 self.pq[parentIndex], self.pq[minIndex] = self.pq[minIndex], self.pq[parentIndex]
-                parentIndex = minIndex
-                leftIndex = 2 * parentIndex + 1
-                rightIndex = 2 * parentIndex + 2
+                parentIndex = minIndex #1
+                leftIndex = 2 * parentIndex + 1 #3
+                rightIndex = 2 * parentIndex + 2 #4
             else:
                 break
 
@@ -91,5 +91,5 @@ pq.insert('C',5)
 pq.insert('B',19)
 pq.insert('D',4)
 
-for i in range(4):
+for i in range(5):
     print(pq.removeMin())

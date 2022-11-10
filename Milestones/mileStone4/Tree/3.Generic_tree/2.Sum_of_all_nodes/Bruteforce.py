@@ -34,6 +34,7 @@ def sumOfAllNodes(root):
     if root is None:
         return 0
     sum = root.data
+    
     for child in root.children:
         sum += sumOfAllNodes(child)
     return sum

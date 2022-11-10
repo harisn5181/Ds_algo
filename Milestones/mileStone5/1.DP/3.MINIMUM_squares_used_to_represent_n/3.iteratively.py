@@ -14,8 +14,9 @@ def minsquares(n):
             currentans=1+dp[i-(j**2)]
             
             ans=min(ans,currentans)
-        dp[i]=ans
-    return dp[n]
+        dp[i]=ans  
+        temp="k"
+    return dp[n]   
 n=41
 ans=minsquares(n)
 print(ans)

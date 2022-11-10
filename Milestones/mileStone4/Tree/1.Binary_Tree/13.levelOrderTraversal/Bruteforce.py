@@ -78,6 +78,7 @@ def takeInput():
 # Main
 root = takeInput()
 a=printLevelWise(root)
+
 for i in a:
     for j in i:
         print(j,end=' ')

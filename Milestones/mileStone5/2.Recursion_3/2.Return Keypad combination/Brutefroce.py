@@ -48,4 +48,4 @@ def keypad(n):
             option=s+c
             output.append(option) #j, k, l,
     return output
-print(keypad(235))
+print(len(keypad(235)))

@@ -1,4 +1,4 @@
-import sys
+
 
 import sys
 def mincost(cost,i,j,n,m):
@@ -16,6 +16,6 @@ def mincost(cost,i,j,n,m):
     return ans
 
 
-Cost=[[1,2,3],[4,5,6]]
-ans=mincost(Cost,0,0,2,3)
+Cost=[[1,2,3],[4,5,6],[7,8,9]]
+ans=mincost(Cost,0,0,3,3)
 print(ans)

@@ -20,23 +20,16 @@ class treeNode:
 
 def printLevelWiseTree(tree):
     q = queue.Queue()
-
     if tree == None:
         return
-
     q.put(tree)
     while (not(q.empty())):
         node=q.get()
-
-
-
         print(node, end=":")
-
         for i in node.children:
             print(i, end=",")
             q.put(i)
         print()
-
 
 def createLevelWiseTree(arr):
     root = treeNode(int(arr[0]))
