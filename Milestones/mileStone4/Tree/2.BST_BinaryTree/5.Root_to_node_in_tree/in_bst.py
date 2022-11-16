@@ -82,8 +82,8 @@ def takeInput():
 # Main
 
 root =takeInput()
-k = 3
+k = 11
 
-root=nodetoRootPath(root,0)
+root=nodetoRootPath(root,k)
 
 print(root)

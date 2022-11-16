@@ -19,8 +19,8 @@ def permute(a, l, r):
 			a[l], a[i] = a[i], a[l] # backtrack
 
 # Driver program to test the above function
-string = input()
-n = len(string)
+string = "abc"
+n = 3
 a = list(string)
 permute(a, 0, n-1)
 

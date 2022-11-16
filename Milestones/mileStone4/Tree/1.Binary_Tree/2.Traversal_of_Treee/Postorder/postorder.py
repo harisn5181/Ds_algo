@@ -24,7 +24,7 @@ class BinaryTreeNode:
         self.right = None
 
 
-def postOrder(root):
+def preOrder(root):
     # Your code goes here
 
     if root == None:

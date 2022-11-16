@@ -1,6 +1,17 @@
 import math
 import sys
 
+
+
+
+
+
+
+
+
+
+
+
 def minsquares(n):
     dp=[-1 for i in range(n+1)]
     dp[0]=0
@@ -15,8 +26,8 @@ def minsquares(n):
             
             ans=min(ans,currentans)
         dp[i]=ans  
-        temp="k"
+       
     return dp[n]   
-n=41
+n=4
 ans=minsquares(n)
 print(ans)

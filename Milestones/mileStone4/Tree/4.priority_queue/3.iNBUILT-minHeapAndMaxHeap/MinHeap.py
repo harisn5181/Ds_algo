@@ -1,11 +1,8 @@
 import heapq
 
-li=[1,5,4,8,7,9,11]
-heapq.heapify(li)
+li=[10,12,2,3,4,1,2]
+heapq.heappush(li,0)
+heapq.heappush(li,-1)
 #print(li)
-heapq.heappush(li,2)
-print(li)
-
 print(heapq.heappop(li))
-# heapq.heapreplace(li,6)
-# print(li)
+print(li)

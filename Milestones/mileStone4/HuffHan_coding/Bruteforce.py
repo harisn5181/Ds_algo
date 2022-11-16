@@ -16,7 +16,7 @@ class BinaryTreeNode:
         self.left=None
         self.right=None
         
-    def __it__(self,other):
+    def __lt__(self,other):
         return self.freq < other.freq
     
     def __eq__(self,other):
@@ -44,23 +44,27 @@ class HuffmanCoding:
         for key in freq_dict:
             frequency=freq_dict[key]
             binaryTreeNode=BinaryTreeNode(key,frequency)
-            heapq.heappush(self.__heap,binaryTreeNode)
+            heapq.heappush(self.__heap,binaryTreeNode)   #error correct
+    
     
     def __buildTree(self):
-        while (len(self.__haeap)>1 ):
-            binary_tree_node_1=heapq.heappop(self.___heap) 
+        while (len(self.__heap)>1 ):
+            binary_tree_node_1=heapq.heappop(self.__heap) 
             binary_tree_node_2=heapq.heappop(self.__heap)
             
             freq_sum=binary_tree_node_1.freq +binary_tree_node_2.freq
+
             newNode=BinaryTreeNode(None,freq_sum)
+
             newNode.left=binary_tree_node_1
             newNode.right=binary_tree_node_2
+
             heapq.heappush(self.__heap,newNode)
         return 
         
     def __buildCodesHelper(self,root,curr_bits):
         
-        if root ==None:
+        if root == None:
             return 
         if root.value is not None:
             self.__codes[root.value]=curr_bits
@@ -110,8 +114,10 @@ class HuffmanCoding:
         #make frequency dictionary using text
             text=file.read()
             text=text.rstrip()
-            freq_dict=self.__make_frequency_dict(text)
-            self.__buildHeap(freq_dict) #constructing the heap for intial
+            
+            freq_dict=self.__make_frequency_dict(text)  #1
+            
+            self.__buildHeap(freq_dict) #2 #constructing the heap for intial
 
             #constuct the heap from frequencey dictionay
             #construct the binary tree from heap
@@ -127,13 +133,18 @@ class HuffmanCoding:
             
             #pad this encoded text
         
-            padded_encoded_text=self.__getPaddedEncodedText(text) 
+            padded_encoded_text=self.__getPaddedEncodedText(encoded_text)
+
             bytes_array=self.__getBytesArray(padded_encoded_text)
+
             #return this binary file as output
+
             final_bytes=bytes(bytes_array)
+
             output.write(final_bytes)
         print("Compressed")
         return output_path
+    
     def __removePadding(self,text):
         padded_info=text[:8]
         extra_padding=int(padded_info,2)
@@ -156,7 +167,7 @@ class HuffmanCoding:
         
     def decompress(self,input_path):
         filename,file_extension=os.path.splitext(self.path)
-        output_path=filename+"decompressed"+".txt"
+        output_path=filename+"_decompressed"+".txt"
         
         with open (input_path,'rb' ) as file,open (output_path,'w' ) as output:
             bit_string=""
@@ -174,7 +185,7 @@ class HuffmanCoding:
         
         #return this binary file as output 
   
-path=r'C:\Users\harisn\Documents\Ds\Git\Ds_algo\Ds_algo\Milestones\mileStone4\HuffHan_coding\Compress.txt'
+path=r"C:\Users\harisn\Documents\DOCUMENTS\Ds\Ds_algo\Milestones\mileStone4\HuffHan_coding\Text_to_compress.txt"
 h=HuffmanCoding(path)
 output_path=h.compress()
-h.decompress(output_path)
+#h.decompress(output_path)

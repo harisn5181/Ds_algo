@@ -12,7 +12,7 @@ def fibb(n):
 
     return myans
 
-n=int(input())
+n=3
 ans=fibb(n)
 print(ans)
 

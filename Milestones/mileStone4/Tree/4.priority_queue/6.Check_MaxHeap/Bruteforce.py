@@ -18,5 +18,5 @@ def checkMaxHeap(lst):
 
 # Main Code
 
-lst=[42, 20, 18, 6 ,14 ,11, 9 ,4]
+lst=[42, 20, 18, 6 ,14 ,11, 9]
 print('true') if checkMaxHeap(lst) else print('false')

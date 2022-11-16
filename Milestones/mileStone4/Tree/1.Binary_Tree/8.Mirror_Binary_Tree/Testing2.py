@@ -18,15 +18,17 @@ def mirrorBinaryTree(root):
     right=mirrorBinaryTree(root.right)
     root.left=right
     root.right=left
+    
+    return root
 
 
 
 
 def takeInput():
-    levelOrder = list(map(int, stdin.readline().strip().split(" ")))
+    levelOrder = [1 ,2, 3, 4, 5, 6, 7, -1, -1, -1, -1, -1, -1, -1, -1]
     start = 0
 
-    length = len(levelOrder)
+    length = len(levelOrder) #
 
     if length == 1 :
         return None
@@ -85,5 +87,5 @@ def printLevelWise(root):
 # Main
 root = takeInput()
 
-mirrorBinaryTree(root)
+root=mirrorBinaryTree(root)
 printLevelWise(root)

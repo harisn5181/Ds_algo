@@ -22,12 +22,12 @@ def printkeypad(n,outputsofar):
     if n==0:
         print(outputsofar)
         return
-    smallnumber=n//10
-    lastdigit=n%10
-    optionsforlastdigit=getstring(lastdigit)
+    smallnumber=n//10 # 0
+    lastdigit=n%10 # 2 
+    optionsforlastdigit=getstring(lastdigit) # def, abc 
 
-    for c in optionsforlastdigit:
-        newoutput=c+outputsofar
+    for c in optionsforlastdigit: # def ,abc 
+        newoutput=c+outputsofar  #  bf 
         printkeypad(smallnumber,newoutput)
 
 

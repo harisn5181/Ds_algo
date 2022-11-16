@@ -1,6 +1,9 @@
 from sys import stdin
 
 
+
+
+
 def maxfreq(arr):
     d = {}
     for num in arr:
@@ -8,6 +11,7 @@ def maxfreq(arr):
             d[num] += 1
         else:
             d[num] = 1
+            
     ans = arr[0]
     for num in arr:
         if d[num] > d[ans]:
@@ -18,5 +22,5 @@ def maxfreq(arr):
 
 
 
-arr = [2 ,12, 2, 11, 12, 2 ,1 ,2 ,2 ,11, 12, 2 6 ]
+arr = [2 ,12, 2, 11, 12, 2 ,1 ,2 ,2 ,11, 12, 26 ]
 print(maxfreq(arr))

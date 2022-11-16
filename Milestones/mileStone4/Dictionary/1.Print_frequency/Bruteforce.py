@@ -1,4 +1,8 @@
 
+
+
+
+
 s=" this is a word string having many many word"
 
 k=2

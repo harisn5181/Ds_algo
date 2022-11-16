@@ -1,3 +1,19 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 def permutationString(s):
     if len(s)==0:
         return [""]

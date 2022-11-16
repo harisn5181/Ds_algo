@@ -22,11 +22,12 @@ def mirrorBinaryTree(root):
     root.left, root.right = root.right, root.left
     mirrorBinaryTree(root.left)
     mirrorBinaryTree(root.right)
+    return root
 
 
 # Taking level-order input using fast I/O method
 def takeInput():
-    levelOrder = list(map(int, stdin.readline().strip().split(" ")))
+    levelOrder = [1 ,2, 3, 4, 5, 6, 7, -1, -1, -1, -1, -1, -1, -1, -1]
     start = 0
 
     length = len(levelOrder)
@@ -88,5 +89,5 @@ def printLevelWise(root):
 # Main
 root = takeInput()
 
-mirrorBinaryTree(root)
+root=mirrorBinaryTree(root)
 printLevelWise(root)

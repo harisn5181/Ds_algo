@@ -1,5 +1,9 @@
 import sys
 
+
+
+
+
 def mincost(cost,i,j,n,m,dp):
     if i==n-1 and j==m-1:
         return cost [i][j]
@@ -32,7 +36,7 @@ def mincost(cost,i,j,n,m,dp):
 
 
 
-n=4
+n=3
 m=3
 dp=[[sys.maxsize for j in range(m+1)] for i in range(n+1)]
 

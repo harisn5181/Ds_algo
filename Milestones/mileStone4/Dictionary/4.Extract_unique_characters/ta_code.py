@@ -1,4 +1,16 @@
 
+
+
+
+
+
+
+
+
+
+
+
+
 def uniqueChar(s):
     d = {}
     for x in s:
@@ -6,6 +18,7 @@ def uniqueChar(s):
 
     out = ""
     print(d)
+    
 
     for x in s:
         if d[x] != None:
@@ -15,5 +28,5 @@ def uniqueChar(s):
 
 
 # Main
-s = input()
+s = "how how "
 print(uniqueChar(s))

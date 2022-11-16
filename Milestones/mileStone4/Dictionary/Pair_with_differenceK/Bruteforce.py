@@ -1,3 +1,13 @@
+
+
+
+
+
+
+
+
+
+
 def printPairDiffK(l, k):
     d={}
     c=0
@@ -10,10 +20,10 @@ def printPairDiffK(l, k):
             if i+k in d:
                 c += d[i] * d[i + k]
         else:
-            c += (d[i + k] * (d[i + k] - 1) // 2)
+            c += (d[i] * (d[i] - 1) // 2)
     return c
 
-l=[4,4,4,4,1,1]
+l=[2,2,4,4]
 
 k=0
 print(printPairDiffK(l, k))

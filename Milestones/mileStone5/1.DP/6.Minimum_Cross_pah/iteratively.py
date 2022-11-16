@@ -1,7 +1,17 @@
 
+
+
+
+
+
+
+
+
+
+
 import sys
 #Bottom up approach
-def mincost(cost,n,m):
+def mincost(cost,n,m):  
     dp=[[sys.maxsize for j in range(m+1)] for i in range(n+1)]
     
     for i in range(n-1,-1,-1):

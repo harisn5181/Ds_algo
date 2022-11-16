@@ -1,3 +1,16 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
 def uniqueChar(string):
     d = {}
     for i in string:
@@ -8,5 +21,5 @@ def uniqueChar(string):
 
 
 # Main
-s=input()
+s="how how "
 uniqueChar(s)

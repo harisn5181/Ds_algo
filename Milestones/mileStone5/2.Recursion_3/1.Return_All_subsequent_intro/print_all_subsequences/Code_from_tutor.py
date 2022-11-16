@@ -3,12 +3,6 @@
 
 
 
-
-
-
-
-
-
 def printSubs(s,o):
     if len(s) ==0:
         print(o)

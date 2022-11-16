@@ -1,6 +1,19 @@
 
+
+
+
+
+
+
+
+
+
+
+
+
 def uniqueChar(s):
     d = {}
+    
     for x in s:
         d[x] = 1
 
@@ -13,5 +26,5 @@ def uniqueChar(s):
 
 
 # Main
-s = input()
+s = "hi how how "
 print(uniqueChar(s))

@@ -1,10 +1,4 @@
 
-
-
-
-
-
-
 from sys import stdin
 from sys import maxsize as MAX_VALUE
 
@@ -20,6 +14,7 @@ def countMinStepto1(n):
         substract1=minSteps[currentsteps-1]
         divideby2= MAX_VALUE
         divideby3= MAX_VALUE
+        
         if currentsteps %2  ==0:
             divideby2 = minSteps[currentsteps//2]
         
@@ -30,7 +25,7 @@ def countMinStepto1(n):
     
     return minSteps[n]
 
-print(countMinStepto1(100))
+print(countMinStepto1(10))
         
         
     

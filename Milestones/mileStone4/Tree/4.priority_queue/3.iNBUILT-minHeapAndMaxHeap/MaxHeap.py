@@ -1,5 +1,9 @@
 #Four import function in minHeap and maxHeap are Push , pop ,replace , Heapify
 
+
+
+
+
 import heapq
 li=[1,2,34,333,43,23]
 heapq._heapify_max(li)

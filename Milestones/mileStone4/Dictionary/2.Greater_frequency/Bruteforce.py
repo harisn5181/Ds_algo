@@ -1,5 +1,12 @@
 # As of Python version 3.7, dictionaries are ordered. In Python 3.6 and earlier, dictionaries are unordered. When we say that dictionaries are ordered, it means that the items have a defined order, and that order will not change.
 
+
+
+
+
+
+
+
 def max_frequency(string):
     d={}
     for i in string:

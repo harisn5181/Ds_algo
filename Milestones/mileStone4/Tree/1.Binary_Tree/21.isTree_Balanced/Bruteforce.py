@@ -14,8 +14,10 @@ def is_balanced(root):
  
 	if lh-rh>1 or rh-lh>1 :
 		return False
+
 	isleftBalanced=is_balanced(root.left)
 	isrightBalanced=is_balanced(root.right)
+ 
 	if isrightBalanced and isleftBalanced:
 		return True
 	else:

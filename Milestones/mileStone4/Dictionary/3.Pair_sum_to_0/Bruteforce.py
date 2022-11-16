@@ -1,14 +1,12 @@
 from sys import stdin
 
-def pairSum0(arr, n):
 
+def pairSum0(arr, n):
     d = {}
     for i in arr:
         d[i] = d.get(i, 0) + 1
         
-    count=0
-    
-
+    count=0 #{2:2,1:1,-2:2,3:1}
     for i in d:
         if -i in d:
             postive_answer=d[i]
@@ -25,7 +23,8 @@ def takeInput():
     n=5
     if n==0:
         return list(),0
-    arr=[2, 1, -2, 2, 3,-2]
+    
+    arr=[0,0,0,0,0]
     return arr,n
 
 arr,n=takeInput()

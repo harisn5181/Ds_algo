@@ -24,13 +24,13 @@ def isBst(root):
     if root ==None:
         return True
     
-    leftMax=maxTree(root.left) # 1
-    rightMin=minTree(root.right) # 3
+    leftMax=maxTree(root.left)   #3
+    rightMin=minTree(root.right) #5
     
     if root.data >rightMin or root.data <=leftMax:
         return False
     
-    isleftBst=isBst(root.left) #
-    isRightBst=isBst(root.right)
+    isleftBst  =  isBst(root.left) #
+    isRightBst = isBst(root.right)
     return isleftBst and isRightBst
     

@@ -1,7 +1,19 @@
 #Iterative solution for Fibnocci
 
+
+
+
+
+
+
+
+
+
+
+
+
 def fibb1(n):
-    dp =[0 for i in range (n)]
+    dp =[0 for i in range (n+1)]
     dp[0] =1
     dp[1] =1
     i=2

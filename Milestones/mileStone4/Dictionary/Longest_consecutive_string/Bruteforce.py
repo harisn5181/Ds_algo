@@ -1,3 +1,9 @@
+
+
+
+
+
+
 def longest(l):
     dic = {}
     const = []
@@ -33,8 +39,8 @@ def longest(l):
 # You have To Return the list of longestConsecutiveSubsequence
 
 
-n = int(input())
-l = list(int(i) for i in input().strip().split(' '))
+n = 7
+l = [3 ,7, 2, 1, 9 ,8 ,41]
 final = longest(l)
 final.sort()
 print(final[0], final[-1])

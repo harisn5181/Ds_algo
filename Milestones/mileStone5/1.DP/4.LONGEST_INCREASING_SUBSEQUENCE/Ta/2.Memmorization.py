@@ -1,3 +1,10 @@
+
+
+
+
+
+
+
 def lis(arr, n, dp, i=0):
     if i == n:
         return (0, 0)
@@ -23,7 +30,7 @@ def lis(arr, n, dp, i=0):
 
 
 
-arr = [0,5,2,3,4,]
+arr = [6, 3, 1, 2, 7, 0, 9]
 n = len(arr)
 dp = [None for _ in range(n+1)]
 dp[1]=lis(arr, n, dp)[1]

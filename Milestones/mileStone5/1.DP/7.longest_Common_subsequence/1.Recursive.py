@@ -2,14 +2,6 @@
 
 
 
-
-
-
-
-
-
-
-
 def lcs(str1,str2,i,j):
 
     if i == len(str1) or j == len(str2):
@@ -25,9 +17,9 @@ def lcs(str1,str2,i,j):
 
 
 
-str1="abedgjc"
+str1="abjc"
 
-str2="bmdgsc"
+str2="abjc"
 
 ans=lcs(str1,str2,0,0)
 

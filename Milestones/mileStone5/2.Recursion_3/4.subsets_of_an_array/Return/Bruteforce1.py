@@ -18,6 +18,7 @@ def subset_sum(arr,output):
         output.append("")
         return output
     sum=subset_sum(arr[1:],output) #sum=30,"","20 30",20,
+    
     last_digit=arr[0] # 10
 
     len_s=len(sum)

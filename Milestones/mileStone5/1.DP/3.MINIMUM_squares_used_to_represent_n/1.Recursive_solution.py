@@ -2,6 +2,12 @@ import math
 import sys
 
 
+
+
+
+
+
+
 def minsquare(n):
 
     if n ==0:
@@ -18,7 +24,7 @@ def minsquare(n):
     return ans
 
 
-n=10
+n=4
 ans=minsquare(n)
 print(ans)
 
