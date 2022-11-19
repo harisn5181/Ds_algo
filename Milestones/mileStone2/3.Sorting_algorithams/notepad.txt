@@ -1,0 +1,5 @@
+1)selection =>find minimum and put that into first ,etc...
+2)bubble sort=>make largest element to last of array 
+3)insert sort=>concept of sorted array and non sorted array
+4)merget sort=>divide the array and sort using recursion
+5)quick sort= > kind of same like merge sort,but the difference is that ,it find pivot first ,then call the recursion
